@@ -14,6 +14,14 @@
 		235D9C3B2C7E1AA7000E6712 /* FlowFreeSolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D9C3A2C7E1AA7000E6712 /* FlowFreeSolverTests.swift */; };
 		235D9C452C7E1AA7000E6712 /* FlowFreeSolverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D9C442C7E1AA7000E6712 /* FlowFreeSolverUITests.swift */; };
 		235D9C472C7E1AA7000E6712 /* FlowFreeSolverUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D9C462C7E1AA7000E6712 /* FlowFreeSolverUITestsLaunchTests.swift */; };
+		235D9C582C7E1B67000E6712 /* FlowColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D9C572C7E1B67000E6712 /* FlowColor.swift */; };
+		235D9C5A2C7E1C10000E6712 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D9C592C7E1C10000E6712 /* Point.swift */; };
+		235D9C5C2C7E1CB8000E6712 /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D9C5B2C7E1CB8000E6712 /* Puzzle.swift */; };
+		235D9C5E2C7E1D2F000E6712 /* PuzzleSolverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D9C5D2C7E1D2F000E6712 /* PuzzleSolverViewModel.swift */; };
+		235D9C602C7E1D99000E6712 /* PuzzleGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D9C5F2C7E1D99000E6712 /* PuzzleGridView.swift */; };
+		235D9C622C7E1DA7000E6712 /* PuzzleCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D9C612C7E1DA7000E6712 /* PuzzleCellView.swift */; };
+		235D9C642C823D36000E6712 /* PuzzleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D9C632C823D36000E6712 /* PuzzleFactory.swift */; };
+		235D9C672C823D74000E6712 /* PuzzleSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235D9C662C823D74000E6712 /* PuzzleSolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,14 @@
 		235D9C402C7E1AA7000E6712 /* FlowFreeSolverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowFreeSolverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		235D9C442C7E1AA7000E6712 /* FlowFreeSolverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowFreeSolverUITests.swift; sourceTree = "<group>"; };
 		235D9C462C7E1AA7000E6712 /* FlowFreeSolverUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowFreeSolverUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		235D9C572C7E1B67000E6712 /* FlowColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowColor.swift; sourceTree = "<group>"; };
+		235D9C592C7E1C10000E6712 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		235D9C5B2C7E1CB8000E6712 /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
+		235D9C5D2C7E1D2F000E6712 /* PuzzleSolverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleSolverViewModel.swift; sourceTree = "<group>"; };
+		235D9C5F2C7E1D99000E6712 /* PuzzleGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleGridView.swift; sourceTree = "<group>"; };
+		235D9C612C7E1DA7000E6712 /* PuzzleCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleCellView.swift; sourceTree = "<group>"; };
+		235D9C632C823D36000E6712 /* PuzzleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleFactory.swift; sourceTree = "<group>"; };
+		235D9C662C823D74000E6712 /* PuzzleSolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleSolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +110,11 @@
 		235D9C282C7E1AA6000E6712 /* FlowFreeSolver */ = {
 			isa = PBXGroup;
 			children = (
+				235D9C652C823D49000E6712 /* Services */,
+				235D9C562C7E1B1E000E6712 /* ViewModels */,
+				235D9C542C7E1B0F000E6712 /* Views */,
+				235D9C532C7E1B08000E6712 /* Models */,
 				235D9C292C7E1AA6000E6712 /* FlowFreeSolverApp.swift */,
-				235D9C2B2C7E1AA6000E6712 /* ContentView.swift */,
 				235D9C2D2C7E1AA7000E6712 /* Assets.xcassets */,
 				235D9C2F2C7E1AA7000E6712 /* Preview Content */,
 			);
@@ -125,6 +144,43 @@
 				235D9C462C7E1AA7000E6712 /* FlowFreeSolverUITestsLaunchTests.swift */,
 			);
 			path = FlowFreeSolverUITests;
+			sourceTree = "<group>";
+		};
+		235D9C532C7E1B08000E6712 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				235D9C572C7E1B67000E6712 /* FlowColor.swift */,
+				235D9C592C7E1C10000E6712 /* Point.swift */,
+				235D9C5B2C7E1CB8000E6712 /* Puzzle.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		235D9C542C7E1B0F000E6712 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				235D9C2B2C7E1AA6000E6712 /* ContentView.swift */,
+				235D9C5F2C7E1D99000E6712 /* PuzzleGridView.swift */,
+				235D9C612C7E1DA7000E6712 /* PuzzleCellView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		235D9C562C7E1B1E000E6712 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				235D9C5D2C7E1D2F000E6712 /* PuzzleSolverViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		235D9C652C823D49000E6712 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				235D9C632C823D36000E6712 /* PuzzleFactory.swift */,
+				235D9C662C823D74000E6712 /* PuzzleSolver.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +313,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				235D9C672C823D74000E6712 /* PuzzleSolver.swift in Sources */,
+				235D9C5C2C7E1CB8000E6712 /* Puzzle.swift in Sources */,
+				235D9C5A2C7E1C10000E6712 /* Point.swift in Sources */,
+				235D9C582C7E1B67000E6712 /* FlowColor.swift in Sources */,
+				235D9C5E2C7E1D2F000E6712 /* PuzzleSolverViewModel.swift in Sources */,
+				235D9C622C7E1DA7000E6712 /* PuzzleCellView.swift in Sources */,
 				235D9C2C2C7E1AA6000E6712 /* ContentView.swift in Sources */,
 				235D9C2A2C7E1AA6000E6712 /* FlowFreeSolverApp.swift in Sources */,
+				235D9C642C823D36000E6712 /* PuzzleFactory.swift in Sources */,
+				235D9C602C7E1D99000E6712 /* PuzzleGridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
