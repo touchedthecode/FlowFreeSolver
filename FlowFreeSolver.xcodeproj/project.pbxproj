@@ -110,6 +110,7 @@
 		235D9C282C7E1AA6000E6712 /* FlowFreeSolver */ = {
 			isa = PBXGroup;
 			children = (
+				235D9C692C832958000E6712 /* Vision */,
 				235D9C652C823D49000E6712 /* Services */,
 				235D9C562C7E1B1E000E6712 /* ViewModels */,
 				235D9C542C7E1B0F000E6712 /* Views */,
@@ -181,6 +182,13 @@
 				235D9C662C823D74000E6712 /* PuzzleSolver.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		235D9C692C832958000E6712 /* Vision */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vision;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

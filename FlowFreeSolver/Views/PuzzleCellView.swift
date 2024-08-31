@@ -11,20 +11,70 @@ import SwiftUI
 
 struct PuzzleCellView: View {
     let color: FlowColor
+    let isStartOrEnd: Bool
+    let pipeDirection: PipeDirection?
 
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(Color.gray)
-                .border(Color.black)
+                .fill(Color.black)
+                .border(Color.gray)
 
-            if color != .none {
+            if isStartOrEnd && color != .none {
                 Circle()
                     .fill(Color(color))
                     .padding(4) // Adjust padding to make the circle smaller within the cell
+            } else if let pipeDirection = pipeDirection, color != .none {
+                PipeView(color: color, direction: pipeDirection)
             }
         }
     }
+}
+
+struct PipeView: View {
+    let color: FlowColor
+    let direction: PipeDirection
+
+    var body: some View {
+        GeometryReader { geometry in
+            Path { path in
+                let rect = geometry.frame(in: .local)
+                switch direction {
+                case .horizontal:
+                    path.move(to: CGPoint(x: 0, y: rect.midY))
+                    path.addLine(to: CGPoint(x: rect.maxX, y: rect.midY))
+                case .vertical:
+                    path.move(to: CGPoint(x: rect.midX, y: 0))
+                    path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY))
+                case .bendUpRight:
+                    path.move(to: CGPoint(x: rect.midX, y: 0)) // From top center
+                    path.addLine(to: CGPoint(x: rect.midX, y: rect.midY)) // Down to center
+                    path.addLine(to: CGPoint(x: rect.maxX, y: rect.midY)) // Right to right center
+                case .bendUpLeft:
+                    path.move(to: CGPoint(x: rect.midX, y: 0)) // From top center
+                    path.addLine(to: CGPoint(x: rect.midX, y: rect.midY)) // Down to center
+                    path.addLine(to: CGPoint(x: 0, y: rect.midY)) // Left to left center
+                case .bendDownRight:
+                    path.move(to: CGPoint(x: rect.midX, y: rect.maxY)) // From bottom center
+                    path.addLine(to: CGPoint(x: rect.midX, y: rect.midY)) // Up to center
+                    path.addLine(to: CGPoint(x: rect.maxX, y: rect.midY)) // Right to right center
+                case .bendDownLeft:
+                    path.move(to: CGPoint(x: rect.midX, y: rect.maxY)) // From bottom center
+                    path.addLine(to: CGPoint(x: rect.midX, y: rect.midY)) // Up to center
+                    path.addLine(to: CGPoint(x: 0, y: rect.midY)) // Left to left center
+                }
+            }
+            .stroke(Color(color), lineWidth: 8)
+        }
+    }
+}
+enum PipeDirection {
+    case horizontal
+    case vertical
+    case bendUpRight // Bend from up to right (└)
+    case bendUpLeft  // Bend from up to left (┘)
+    case bendDownRight // Bend from down to right (┌)
+    case bendDownLeft  // Bend from down to left (┐)
 }
 
 

@@ -27,8 +27,9 @@ struct ContentView: View {
             VStack {
                 Spacer() // Add space above the grid
 
-                PuzzleGridView(grid: viewModel.puzzle.grid, cellSize: cellSize)
-                
+                PuzzleGridView(puzzle: viewModel.puzzle, cellSize: cellSize)
+                    .background(Color.black)  // Set the background of the grid to black
+
                 Spacer() // Add space below the grid
 
                 // Solve Puzzle Button
